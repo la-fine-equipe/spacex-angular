@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {throwError} from 'rxjs';
+import {Observable, throwError} from 'rxjs';
+import {catchError} from 'rxjs/operators';
+import {Launch} from '../Models/launch';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,31 @@ export class SpacexApiService {
   baseUrl = 'https://api.spacexdata.com/v2';
 
   constructor(private restClient: HttpClient) { }
+
+  getLatestLaunches(): Observable<Launch> {
+    const requestEndpoint = this.baseUrl + '/launches/latest';
+    return this.restClient.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getLaunches(): Observable<Launch> {
+    const requestEndpoint = this.baseUrl + '/launches';
+    return this.restClient.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+
+  getUpcomingLaunches(): Observable<Launch> {
+    const requestEndpoint = this.baseUrl + '/launches/upcoming';
+    return this.restClient.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
