@@ -12,6 +12,7 @@ import { PageCapsuleComponent } from './page-capsule/page-capsule.component';
 import { PageLaunchpadComponent } from './page-launchpad/page-launchpad.component';
 import { PageDetailedCapsuleComponent } from './page-detailed-capsule/page-detailed-capsule.component';
 import { PageDetailedCoreComponent } from './page-detailed-core/page-detailed-core.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PageDetailedCoreComponent } from './page-detailed-core/page-detailed-co
     PageCapsuleComponent,
     PageLaunchpadComponent,
     PageDetailedCapsuleComponent,
-    PageDetailedCoreComponent
+    PageDetailedCoreComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
