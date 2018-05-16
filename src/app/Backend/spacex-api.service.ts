@@ -4,6 +4,7 @@ import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {Launch} from '../Models/launch';
 import {LaunchOptions} from '../Models/launchOptions';
+import {CompanyInfo} from '../Models/companyInfo';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,14 @@ export class SpacexApiService {
   baseUrl = 'https://api.spacexdata.com/v2';
 
   constructor(private restClient: HttpClient) { }
+
+  getCompanyInfos(): Observable<CompanyInfo>{
+    const requestEndpoint = this.baseUrl + '/info';
+    return this.restClient.get<CompanyInfo>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
   getLatestLaunches(): Observable<Launch> {
     const requestEndpoint = this.baseUrl + '/launches/latest';

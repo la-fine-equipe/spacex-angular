@@ -1,3 +1,15 @@
-<p>
-  page-company works!
-</p>
+<!--Card-->
+<div class="card">
+  <!--Card content-->
+  <div class="card-body">
+    <!--Title-->
+    <h4 class="card-title">{{ infos.name }}</h4>
+    <h5>Fondateur : {{ infos.founder }}</h5>
+    <p>Date de création : {{ infos.founded }}</p>
+    <p>CEO : {{ infos.ceo }}</p>
+    <p>CTO : {{ infos.cto }}</p>
+    <h5>Headquarter :</h5>
+    <p>adresse : {{ infos.headquarters.address}}, {{ infos.headquarters.city }} - {{ infos.headquarters.state }}</p>
+  </div>
+</div>
+<!--/.Card-->
