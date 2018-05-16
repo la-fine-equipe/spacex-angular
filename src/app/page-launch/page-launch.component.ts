@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpacexApiService } from '../Backend/spacex-api.service';
 
 @Component({
   selector: 'app-page-launch',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageLaunchComponent implements OnInit {
 
-  constructor() { }
+  launches;
+
+  constructor(private spacexApi: SpacexApiService) { }
 
   ngOnInit() {
+    this.spacexApi.getPastLaunches().subscribe(data => this.launches = data);
   }
 
 }

@@ -1,3 +1,4 @@
+///<reference path="../../node_modules/@angular/core/src/metadata/ng_module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -12,7 +13,8 @@ import { PageCapsuleComponent } from './page-capsule/page-capsule.component';
 import { PageLaunchpadComponent } from './page-launchpad/page-launchpad.component';
 import { PageDetailedCapsuleComponent } from './page-detailed-capsule/page-detailed-capsule.component';
 import { PageDetailedCoreComponent } from './page-detailed-core/page-detailed-core.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PageDetailedCoreComponent } from './page-detailed-core/page-detailed-co
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
