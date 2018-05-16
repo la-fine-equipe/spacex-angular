@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpacexApiService } from '../Backend/spacex-api.service';
+import { SpacexApiService } from '../backend/spacex-api.service';
 
 @Component({
   selector: 'app-page-rocket',

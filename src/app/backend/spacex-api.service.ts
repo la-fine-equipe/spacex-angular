@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {Launch} from '../Models/launch';
-import {LaunchOptions} from '../Models/launchOptions';
-import {CompanyInfo} from '../Models/companyInfo';
-import {Rockets} from '../Models/rockets';
+import {Launch} from '../models/launch';
+import {LaunchOptions} from '../models/launchOptions';
+import {CompanyInfo} from '../models/companyInfo';
+import {Rockets} from '../models/rockets';
+import {Launchpad} from '../models/launchpad';
 
 @Injectable({
   providedIn: 'root'
@@ -64,6 +65,14 @@ export class SpacexApiService {
     }
     const requestEndpoint = this.baseUrl + '/launches?' + params.toString();
     return this.restClient.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getLaunchpads(): Observable<Launchpad> {
+    const requestEndpoint = this.baseUrl + '/launchpads';
+    return this.restClient.get<Launchpad>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
