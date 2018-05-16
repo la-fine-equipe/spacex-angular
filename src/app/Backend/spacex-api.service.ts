@@ -5,6 +5,7 @@ import {catchError} from 'rxjs/operators';
 import {Launch} from '../Models/launch';
 import {LaunchOptions} from '../Models/launchOptions';
 import {CompanyInfo} from '../Models/companyInfo';
+import {Rockets} from '../Models/rockets';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,17 @@ export class SpacexApiService {
 
   constructor(private restClient: HttpClient) { }
 
-  getCompanyInfos(): Observable<CompanyInfo>{
+  getCompanyInfos(): Observable<CompanyInfo> {
     const requestEndpoint = this.baseUrl + '/info';
     return this.restClient.get<CompanyInfo>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getRockets(): Observable<Rockets> {
+    const requestEndpoint = this.baseUrl + '/rockets';
+    return this.restClient.get<Rockets>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
@@ -49,8 +58,8 @@ export class SpacexApiService {
 
 
   getLaunches(options: LaunchOptions): Observable<Launch> {
-    let params = new URLSearchParams();
-    for(let key in options){
+    const params = new URLSearchParams();
+    for (const key in options) {
       params.set(key, options[key]);
     }
     const requestEndpoint = this.baseUrl + '/launches?' + params.toString();
