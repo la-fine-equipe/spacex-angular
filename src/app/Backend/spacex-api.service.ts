@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {Launch} from '../Models/launch';
+import {LaunchOptions} from '../Models/launchOptions';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class SpacexApiService {
       );
   }
 
-  getLaunches(): Observable<Launch> {
+  getPastLaunches(): Observable<Launch> {
     const requestEndpoint = this.baseUrl + '/launches';
     return this.restClient.get<Launch>(requestEndpoint)
       .pipe(
@@ -31,6 +32,19 @@ export class SpacexApiService {
 
   getUpcomingLaunches(): Observable<Launch> {
     const requestEndpoint = this.baseUrl + '/launches/upcoming';
+    return this.restClient.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+
+  getLaunches(options: LaunchOptions): Observable<Launch> {
+    let params = new URLSearchParams();
+    for(let key in options){
+      params.set(key, options[key]);
+    }
+    const requestEndpoint = this.baseUrl + '/launches?' + params.toString();
     return this.restClient.get<Launch>(requestEndpoint)
       .pipe(
         catchError(this.handleError)

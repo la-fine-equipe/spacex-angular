@@ -1,3 +1,4 @@
+///<reference path="../../node_modules/@angular/core/src/metadata/ng_module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -13,7 +14,8 @@ import { PageLaunchpadComponent } from './page-launchpad/page-launchpad.componen
 import { PageDetailedCapsuleComponent } from './page-detailed-capsule/page-detailed-capsule.component';
 import { PageDetailedCoreComponent } from './page-detailed-core/page-detailed-core.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
