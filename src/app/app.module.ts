@@ -1,4 +1,3 @@
-///<reference path="../../node_modules/@angular/core/src/metadata/ng_module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -9,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageCompanyComponent } from './pages/company/page-company.component';
 import { RocketListComponent } from './pages/rocket/list/rocketList.component';
-import { PageCapsuleComponent } from './pages/capsule/page-capsule.component';
 import { LaunchpadListComponent } from './pages/launchpad/list/launchpadList.component';
 import { PageDetailedCapsuleComponent } from './pages/detailed-capsule/page-detailed-capsule.component';
 import { PageDetailedCoreComponent } from './pages/detailed-core/page-detailed-core.component';
@@ -19,7 +17,8 @@ import { HttpModule } from '@angular/http';
 import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDetails.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 import { RocketDetailsComponent } from './pages/rocket/details/rocketDetails.component';
-import { CapsuleDetailsComponent } from './pages/capsule/capsule-details/capsule-details.component';
+import { CapsuleListComponent } from './pages/capsule/list/capsuleList.component';
+import { CapsuleDetailsComponent } from './pages/capsule/details/capsuleDetails.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,7 @@ import { CapsuleDetailsComponent } from './pages/capsule/capsule-details/capsule
     HomeComponent,
     PageCompanyComponent,
     RocketListComponent,
-    PageCapsuleComponent,
+    CapsuleListComponent,
     LaunchpadListComponent,
     PageDetailedCapsuleComponent,
     PageDetailedCoreComponent,
