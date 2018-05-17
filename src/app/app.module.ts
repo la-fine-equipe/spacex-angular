@@ -1,6 +1,6 @@
 ///<reference path="../../node_modules/@angular/core/src/metadata/ng_module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app-routing.module';
@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDetails.component';
+import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 @NgModule({
   declarations: [
@@ -32,16 +33,18 @@ import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDe
     PageDetailedCoreComponent,
     FooterComponent,
     LaunchpadDetailsComponent,
-    LaunchpadDetailsComponent
+    LaunchpadDetailsComponent,
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    NgHttpLoaderModule
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }
