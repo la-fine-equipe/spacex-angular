@@ -73,7 +73,7 @@ export interface Diameter {
     feet: number;
 }
 
-export interface Capsules {
+export interface Capsule {
     id: string;
     name: string;
     type: string;
