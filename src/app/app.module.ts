@@ -1,6 +1,6 @@
 ///<reference path="../../node_modules/@angular/core/src/metadata/ng_module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app-routing.module';
@@ -42,6 +42,7 @@ import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDe
     HttpModule
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }
