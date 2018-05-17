@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageLaunchpadComponent } from './page-launchpad.component';
+import { LaunchpadListComponent } from './launchpadList.component';
 
-describe('PageLaunchpadComponent', () => {
-  let component: PageLaunchpadComponent;
-  let fixture: ComponentFixture<PageLaunchpadComponent>;
+describe('LaunchpadListComponent', () => {
+  let component: LaunchpadListComponent;
+  let fixture: ComponentFixture<LaunchpadListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageLaunchpadComponent ]
+      declarations: [ LaunchpadListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageLaunchpadComponent);
+    fixture = TestBed.createComponent(LaunchpadListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

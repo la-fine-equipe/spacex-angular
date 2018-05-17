@@ -96,6 +96,14 @@ export class SpacexApiService {
       );
   }
 
+  getLaunchpad(id: String): Observable<Launchpad> {
+    const requestEndpoint = this.baseUrl + '/launchpads/' + id;
+    return this.restClient.get<Launchpad>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

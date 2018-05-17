@@ -3,7 +3,8 @@
   <!--Card content-->
   <div class="card-body">
     <!--Title-->
-    <h4 class="card-title">{{ launchpad.full_name }}</h4>
+    <h4 class="card-title"><a routerLink="/launchpad/{{launchpad.id}}">{{ launchpad.full_name }}</a></h4>
+
     <!--Text-->
     <p class="card-text">{{ launchpad.details }}</p>
     <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>

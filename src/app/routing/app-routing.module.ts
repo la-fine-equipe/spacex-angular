@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes }  from '@angular/router';
-import {PageLaunchComponent} from '../pages/launch/page-launch.component';
-import {HomeComponent} from '../pages/home/home.component';
-import {PageCompanyComponent} from '../pages/company/page-company.component';
-import {PageRocketComponent} from '../pages/rocket/page-rocket.component';
-import {PageCapsuleComponent} from '../pages/capsule/page-capsule.component';
-import {PageLaunchpadComponent} from '../pages/launchpad/page-launchpad.component';
-import {PageDetailedCapsuleComponent} from '../pages/detailed-capsule/page-detailed-capsule.component';
-import {PageDetailedCoreComponent} from '../pages/detailed-core/page-detailed-core.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PageLaunchComponent } from '../pages/launch/page-launch.component';
+import { HomeComponent } from '../pages/home/home.component';
+import { PageCompanyComponent } from '../pages/company/page-company.component';
+import { PageRocketComponent } from '../pages/rocket/page-rocket.component';
+import { PageCapsuleComponent } from '../pages/capsule/page-capsule.component';
+import { LaunchpadListComponent } from '../pages/launchpad/list/launchpadList.component';
+import { LaunchpadDetailsComponent } from '../pages/launchpad/details/launchpadDetails.component';
+import { PageDetailedCapsuleComponent } from '../pages/detailed-capsule/page-detailed-capsule.component';
+import { PageDetailedCoreComponent } from '../pages/detailed-core/page-detailed-core.component';
 
 const appRoutes: Routes = [
   {
@@ -25,7 +26,11 @@ const appRoutes: Routes = [
   },
   {
     path: 'launchpad',
-    component: PageLaunchpadComponent
+    component: LaunchpadListComponent
+  },
+  {
+    path: 'launchpad/:id',
+    component: LaunchpadDetailsComponent
   },
   {
     path: 'launches',
