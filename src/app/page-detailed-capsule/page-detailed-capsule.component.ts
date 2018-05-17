@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpacexApiService } from '../backend/spacex-api.service';
 
 @Component({
   selector: 'app-page-detailed-capsule',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageDetailedCapsuleComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  capsulesDetails;
+  
+    constructor(private spacexApi: SpacexApiService) { }
+  
+    ngOnInit() {
+      this.spacexApi.getCapsulesDetails().subscribe(data => this.capsulesDetails = data);
+    }
 
 }
