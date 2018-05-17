@@ -1,43 +1,55 @@
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+  <div class="container">
 
-  <!-- Navbar brand -->
-  <logo><a class="navbar-brand" href="#">Navbar</a></logo>
+    <!-- Brand -->
+    <a class="navbar-brand" href="#" target="_blank">
+      <img src="http://www.spacex.com/sites/all/themes/spacex2012/logo.png" alt="Space X">
+    </a>
 
-  <!-- Collapsible content -->
-  <links>
+    <!-- Collapse -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a routerLink="/" class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
-      </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-      <!-- Dropdown -->
-      <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          Données Space X<span class="caret"></span></a>
-        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a routerLink="company" class="dropdown-item waves-light" mdbWavesEffect href="#">Company Data</a>
-          <div class="divider dropdown-divider"></div>
-          <a routerLink="rocket" class="dropdown-item waves-light" mdbWavesEffect href="#">Rocket Data</a>
-          <div class="divider dropdown-divider"></div>
-          <a routerLink="capsule" class="dropdown-item waves-light" mdbWavesEffect href="#">Capsule Data</a>
-          <div class="divider dropdown-divider"></div>
-          <a routerLink="launchpad" class="dropdown-item waves-light" mdbWavesEffect href="#">Launchpad Data</a>
-          <div class="divider dropdown-divider"></div>
-          <a routerLink="launches" class="dropdown-item waves-light" mdbWavesEffect href="#">Launches</a>
-          <div class="divider dropdown-divider"></div>
-          <a routerLink="detailed-capsule" class="dropdown-item waves-light" mdbWavesEffect href="#">Detailed Capsule Data</a>
-          <div class="divider dropdown-divider"></div>
-          <a routerLink="detailed-core" class="dropdown-item waves-light" mdbWavesEffect href="#">Detailed Core Data</a>
-        </div>
-      </li>
+      <!-- Left -->
+      <ul class="navbar-nav mr-auto">
+      </ul>
 
-    </ul>
-    <!-- Links -->
-  </links>
-  <!-- Collapsible content -->
-
-</mdb-navbar>
-<!--/.Navbar-->
+      <!-- Right -->
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            Data Space X
+            <span class="caret"></span>
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <a routerLink="company" class="dropdown-item waves-light" mdbWavesEffect>Company Data</a>
+            <div class="divider dropdown-divider"></div>
+            <a routerLink="rocket" class="dropdown-item waves-light" mdbWavesEffect>Rocket Data</a>
+            <div class="divider dropdown-divider"></div>
+            <a routerLink="capsule" class="dropdown-item waves-light" mdbWavesEffect>Capsule Data</a>
+            <div class="divider dropdown-divider"></div>
+            <a routerLink="launchpad" class="dropdown-item waves-light" mdbWavesEffect>Launchpad Data</a>
+            <div class="divider dropdown-divider"></div>
+            <a routerLink="launches" class="dropdown-item waves-light" mdbWavesEffect>Launches</a>
+            <div class="divider dropdown-divider"></div>
+            <a routerLink="detailed-capsule" class="dropdown-item waves-light" mdbWavesEffect>Detailed Capsule Data</a>
+            <div class="divider dropdown-divider"></div>
+            <a routerLink="detailed-core" class="dropdown-item waves-light" mdbWavesEffect>Detailed Core Data</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Navbar -->
