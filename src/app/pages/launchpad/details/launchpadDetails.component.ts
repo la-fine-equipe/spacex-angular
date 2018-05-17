@@ -18,8 +18,8 @@ export class LaunchpadDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.spacexApi.getLaunchpad(params['id']).subscribe(launchpad => this.launchpad = launchpad);
-      this.spacexApi.getAllLaunchesById({launchpad_id: params['id']})
+      this.spacexApi.getLaunchpadById(params['id']).subscribe(launchpad => this.launchpad = launchpad);
+      this.spacexApi.getFilteredlLaunches({site_id: params['id']})
         .subscribe(launches => this.launches = launches);
     });
   }

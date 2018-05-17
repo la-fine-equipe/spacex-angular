@@ -34,15 +34,15 @@ export class SpacexApiService {
       );
   }
 
-  getCapsules(): Observable<Rockets> {
+  getCapsules(): Observable<Capsules> {
     const requestEndpoint = this.baseUrl + '/capsules';
-    return this.restClient.get<Capsule>(requestEndpoint)
+    return this.restClient.get<Capsules>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  getCapsulesDetails(): Observable<Rockets> {
+  getCapsulesDetails(): Observable<CapsulesDetails> {
     const requestEndpoint = this.baseUrl + '/parts/caps';
     return this.restClient.get<CapsulesDetails>(requestEndpoint)
       .pipe(
@@ -89,6 +89,7 @@ export class SpacexApiService {
     for (const key in options) {
       params.set(key, options[key]);
     }
+
     const requestEndpoint = this.baseUrl + '/launches?' + params.toString();
     return this.restClient.get<Launch>(requestEndpoint)
       .pipe(
@@ -104,7 +105,7 @@ export class SpacexApiService {
       );
   }
 
-  getLaunchpad(id: String): Observable<Launchpad> {
+  getLaunchpadById(id: String): Observable<Launchpad> {
     const requestEndpoint = this.baseUrl + '/launchpads/' + id;
     return this.restClient.get<Launchpad>(requestEndpoint)
       .pipe(
