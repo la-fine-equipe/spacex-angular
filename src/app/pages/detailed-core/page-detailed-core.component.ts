@@ -1,4 +1,6 @@
+import { CoresDetails } from '../../models/coresDetails';
 import { Component, OnInit } from '@angular/core';
+import { SpacexApiService } from '../../backend/spacex-api.service';
 
 @Component({
   selector: 'app-page-detailed-core',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageDetailedCoreComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  coresDetails: CoresDetails;
+  
+    constructor(private spacexApi: SpacexApiService) { }
+  
+    ngOnInit() {
+      this.spacexApi.getCoresDetails().subscribe(data => this.coresDetails = data);
+    }
 
 }

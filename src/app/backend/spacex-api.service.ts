@@ -9,6 +9,7 @@ import {Rockets} from '../models/rockets';
 import {Capsules} from '../models/capsules';
 import {CapsulesDetails} from '../models/capsulesDetails';
 import {Launchpad} from '../models/launchpad';
+import {CoresDetails} from '../models/coresDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,14 @@ export class SpacexApiService {
   getCapsulesDetails(): Observable<CapsulesDetails> {
     const requestEndpoint = this.baseUrl + '/parts/caps';
     return this.restClient.get<CapsulesDetails>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCoresDetails(): Observable<CoresDetails> {
+    const requestEndpoint = this.baseUrl + '/parts/cores';
+    return this.restClient.get<CoresDetails>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );

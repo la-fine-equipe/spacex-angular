@@ -1,3 +1,13 @@
-<p>
-  page-detailed-core works!
-</p>
+<!--Card-->
+<div class="card" *ngFor="let core of coresDetails;">
+  <!--Card content-->
+  <div class="card-body">
+    <!--Title-->
+    <h4 class="card-title">{{ core.core_serial }}</h4>
+    {{ core.status }}
+    <!--Text-->
+    <p class="card-text">{{ core.details }}</p>
+    <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+  </div>
+</div>
+<!--/.Card-->
