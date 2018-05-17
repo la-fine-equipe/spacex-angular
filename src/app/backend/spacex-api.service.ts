@@ -6,6 +6,8 @@ import {Launch} from '../models/launch';
 import {LaunchOptions} from '../models/launchOptions';
 import {CompanyInfo} from '../models/companyInfo';
 import {Rockets} from '../models/rockets';
+import {Capsules} from '../models/capsules';
+import {CapsulesDetails} from '../models/capsulesDetails';
 import {Launchpad} from '../models/launchpad';
 
 @Injectable({
@@ -27,6 +29,22 @@ export class SpacexApiService {
   getRockets(): Observable<Rockets> {
     const requestEndpoint = this.baseUrl + '/rockets';
     return this.restClient.get<Rockets>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCapsules(): Observable<Rockets> {
+    const requestEndpoint = this.baseUrl + '/capsules';
+    return this.restClient.get<Capsule>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCapsulesDetails(): Observable<Rockets> {
+    const requestEndpoint = this.baseUrl + '/parts/caps';
+    return this.restClient.get<CapsulesDetails>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
