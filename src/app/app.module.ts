@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDetails.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { RocketDetailsComponent } from './pages/rocket/details/rocketDetails.component';
 import { CapsuleListComponent } from './pages/capsule/list/capsuleList.component';
 import { CapsuleDetailsComponent } from './pages/capsule/details/capsuleDetails.component';
@@ -44,7 +45,8 @@ import { CapsuleDetailsComponent } from './pages/capsule/details/capsuleDetails.
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
-    NgHttpLoaderModule
+    NgHttpLoaderModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [ AppComponent ],
