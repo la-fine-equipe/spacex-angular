@@ -16,13 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDetails.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
-<<<<<<< HEAD
 import { NgxPaginationModule } from 'ngx-pagination';
-=======
 import { RocketDetailsComponent } from './pages/rocket/details/rocketDetails.component';
 import { CapsuleListComponent } from './pages/capsule/list/capsuleList.component';
 import { CapsuleDetailsComponent } from './pages/capsule/details/capsuleDetails.component';
->>>>>>> 305827f0a8081183a759c87864d9ac0872b71b28
 
 @NgModule({
   declarations: [
