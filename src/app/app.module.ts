@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDetails.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
-    NgHttpLoaderModule
+    NgHttpLoaderModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [ AppComponent ],
