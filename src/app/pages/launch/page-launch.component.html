@@ -1,3 +1,94 @@
+<<<<<<< HEAD
+=======
+<div class="bodyStyle">
+
+  <section>
+    <ul class="nav nav-tabs nav-justified">
+      <li class="nav-item">
+        <a class="nav-link active show" data-toggle="tab" href="#all" role="tab" aria-selected="true">All Launches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#past" role="tab" aria-selected="false">Past Launches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#upcoming" role="tab" aria-selected="false">Upcoming Launches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#latest" role="tab" aria-selected="false">Latest Launches</a>
+      </li>
+    </ul>
+    <div class="tab-content card">
+      <div class="tab-pane fade in active show" id="all" role="tabpanel">
+        <br>
+        <!--Card-->
+        <div class="card" *ngFor="let launch of launches">
+          <img class="img-fluid" src="{{ launch.links.mission_patch_small }}" alt="">
+          <!--Card content-->
+          <div class="card-body">
+            <!--Title-->
+            <h4 class="card-title">{{ launch.mission_name }}</h4>
+            <!--Text-->
+            <p class="card-text">{{ launch.details }}</p>
+            <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+          </div>
+        </div>
+        <!--/.Card-->
+      </div>
+      <div class="tab-pane fade" id="past" role="tabpanel">
+        <br>
+        <!--Card-->
+        <div class="card" *ngFor="let pastLaunch of pastLaunches">
+          <img class="img-fluid" src="{{ pastLaunch.links.mission_patch_small }}" alt="">
+          <!--Card content-->
+          <div class="card-body">
+            <!--Title-->
+            <h4 class="card-title">{{ pastLaunch.mission_name }}</h4>
+            <!--Text-->
+            <p class="card-text">{{ pastLaunch.details }}</p>
+            <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+          </div>
+        </div>
+        <!--/.Card-->
+      </div>
+      <div class="tab-pane fade" id="upcoming" role="tabpanel">
+        <br>
+        <!--Card-->
+        <div class="card" *ngFor="let upcomingLaunch of upcomingLaunches">
+          <img class="img-fluid" src="{{ upcomingLaunch.links.mission_patch_small }}" alt="">
+          <!--Card content-->
+          <div class="card-body">
+            <!--Title-->
+            <h4 class="card-title">{{ upcomingLaunch.mission_name }}</h4>
+            <!--Text-->
+            <p class="card-text">{{ upcomingLaunch.details }}</p>
+            <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+          </div>
+        </div>
+        <!--/.Card-->
+      </div>
+      <div class="tab-pane fade" id="latest" role="tabpanel">
+        <br>
+        <!--Card-->
+        <div class="card">
+          <img class="img-fluid" src="{{ latestLaunches.links.mission_patch }}" alt="">
+          <!--Card content-->
+          <div class="card-body">
+            <!--Title-->
+            <h4 class="card-title">{{ latestLaunches.mission_name }}</h4>
+            <!--Text-->
+            <p class="card-text">{{ latestLaunches.details }}</p>
+            <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+          </div>
+        </div>
+        <!--/.Card-->
+      </div>
+    </div>
+  </section>
+
+</div>
+<!--/.Card-->
+
+>>>>>>> 305827f0a8081183a759c87864d9ac0872b71b28
 <main>
   <div class="container">
     <section class="magazine-section my-5">

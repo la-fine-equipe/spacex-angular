@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SpacexApiService } from '../../backend/spacex-api.service';
+import { SpacexApiService } from '../../../backend/spacex-api.service';
 
 @Component({
   selector: 'app-page-rocket',
-  templateUrl: './page-rocket.component.html',
-  styleUrls: ['./page-rocket.component.scss']
+  templateUrl: './rocketList.component.html',
+  styleUrls: ['./rocketList.component.scss']
 })
-export class PageRocketComponent implements OnInit {
+export class RocketListComponent implements OnInit {
   rockets;
 
   constructor(private spacexApi: SpacexApiService) { }

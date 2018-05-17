@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageLaunchComponent } from '../pages/launch/page-launch.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { PageCompanyComponent } from '../pages/company/page-company.component';
-import { PageRocketComponent } from '../pages/rocket/page-rocket.component';
-import { PageCapsuleComponent } from '../pages/capsule/page-capsule.component';
+import { RocketListComponent } from '../pages/rocket/list/rocketList.component';
+import { CapsuleListComponent } from '../pages/capsule/list/capsuleList.component';
 import { LaunchpadListComponent } from '../pages/launchpad/list/launchpadList.component';
 import { LaunchpadDetailsComponent } from '../pages/launchpad/details/launchpadDetails.component';
 import { PageDetailedCapsuleComponent } from '../pages/detailed-capsule/page-detailed-capsule.component';
@@ -18,11 +18,11 @@ const appRoutes: Routes = [
   },
   {
     path: 'rocket',
-    component: PageRocketComponent
+    component: RocketListComponent
   },
   {
     path: 'capsule',
-    component: PageCapsuleComponent
+    component: CapsuleListComponent
   },
   {
     path: 'launchpad',

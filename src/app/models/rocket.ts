@@ -102,7 +102,7 @@ export interface LandingLegs {
   material: string;
 }
 
-export interface Rockets {
+export interface Rocket {
   id: string;
   name: string;
   type: string;
