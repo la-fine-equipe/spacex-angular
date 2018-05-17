@@ -10,12 +10,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageCompanyComponent } from './pages/company/page-company.component';
 import { PageRocketComponent } from './pages/rocket/page-rocket.component';
 import { PageCapsuleComponent } from './pages/capsule/page-capsule.component';
-import { PageLaunchpadComponent } from './pages/launchpad/page-launchpad.component';
+import { LaunchpadListComponent } from './pages/launchpad/list/launchpadList.component';
 import { PageDetailedCapsuleComponent } from './pages/detailed-capsule/page-detailed-capsule.component';
 import { PageDetailedCoreComponent } from './pages/detailed-core/page-detailed-core.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDetails.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,12 @@ import { HttpModule } from '@angular/http';
     PageCompanyComponent,
     PageRocketComponent,
     PageCapsuleComponent,
-    PageLaunchpadComponent,
+    LaunchpadListComponent,
     PageDetailedCapsuleComponent,
     PageDetailedCoreComponent,
-    FooterComponent
+    FooterComponent,
+    LaunchpadDetailsComponent,
+    LaunchpadDetailsComponent
   ],
   imports: [
     BrowserModule,
