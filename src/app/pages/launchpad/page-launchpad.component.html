@@ -1,0 +1,12 @@
+<!--Card-->
+<div class="card" *ngFor="let launchpad of launchpads">
+  <!--Card content-->
+  <div class="card-body">
+    <!--Title-->
+    <h4 class="card-title">{{ launchpad.full_name }}</h4>
+    <!--Text-->
+    <p class="card-text">{{ launchpad.details }}</p>
+    <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+  </div>
+</div>
+<!--/.Card-->

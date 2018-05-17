@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpacexApiService } from '../../backend/spacex-api.service';
 
 @Component({
   selector: 'app-page-company',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageCompanyComponent implements OnInit {
 
-  constructor() { }
+  infos;
+
+  constructor(private spacexApi: SpacexApiService) { }
 
   ngOnInit() {
+    this.spacexApi.getCompanyInfos().subscribe(data => this.infos = data);
   }
 
 }
