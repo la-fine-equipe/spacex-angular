@@ -5,8 +5,8 @@ import {catchError} from 'rxjs/operators';
 import {Launch} from '../models/launch';
 import {LaunchOptions} from '../models/launchOptions';
 import {CompanyInfo} from '../models/companyInfo';
-import {Rockets} from '../models/rockets';
-import {Capsules} from '../models/capsules';
+import {Rocket} from '../models/rocket';
+import {Capsule} from '../models/capsule';
 import {CapsulesDetails} from '../models/capsulesDetails';
 import {Launchpad} from '../models/launchpad';
 import {CoresDetails} from '../models/coresDetails';
@@ -27,17 +27,33 @@ export class SpacexApiService {
       );
   }
 
-  getRockets(): Observable<Rockets> {
+  getRockets(): Observable<Rocket> {
     const requestEndpoint = this.baseUrl + '/rockets';
-    return this.restClient.get<Rockets>(requestEndpoint)
+    return this.restClient.get<Rocket>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  getCapsules(): Observable<Capsules> {
+  getRocketById(id: String): Observable<Rocket> {
+    const requestEndpoint = this.baseUrl + '/rockets/' + id;
+    return this.restClient.get<Rocket>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCapsules(): Observable<Capsule> {
     const requestEndpoint = this.baseUrl + '/capsules';
-    return this.restClient.get<Capsules>(requestEndpoint)
+    return this.restClient.get<Capsule>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCapsuleById(id: String): Observable<Capsule> {
+    const requestEndpoint = this.baseUrl + '/capsules/' + id;
+    return this.restClient.get<Capsule>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );

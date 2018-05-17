@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageCapsuleComponent } from './page-capsule.component';
+import { RocketListComponent } from './rocketList.component';
 
-describe('PageCapsuleComponent', () => {
-  let component: PageCapsuleComponent;
-  let fixture: ComponentFixture<PageCapsuleComponent>;
+describe('RocketListComponent', () => {
+  let component: RocketListComponent;
+  let fixture: ComponentFixture<RocketListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageCapsuleComponent ]
+      declarations: [ RocketListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageCapsuleComponent);
+    fixture = TestBed.createComponent(RocketListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -8,7 +8,7 @@ import { PageLaunchComponent } from './pages/launch/page-launch.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageCompanyComponent } from './pages/company/page-company.component';
-import { PageRocketComponent } from './pages/rocket/page-rocket.component';
+import { RocketListComponent } from './pages/rocket/list/rocketList.component';
 import { PageCapsuleComponent } from './pages/capsule/page-capsule.component';
 import { LaunchpadListComponent } from './pages/launchpad/list/launchpadList.component';
 import { PageDetailedCapsuleComponent } from './pages/detailed-capsule/page-detailed-capsule.component';
@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDetails.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { RocketDetailsComponent } from './pages/rocket/details/rocketDetails.component';
+import { CapsuleDetailsComponent } from './pages/capsule/capsule-details/capsule-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
     HeaderComponent,
     HomeComponent,
     PageCompanyComponent,
-    PageRocketComponent,
+    RocketListComponent,
     PageCapsuleComponent,
     LaunchpadListComponent,
     PageDetailedCapsuleComponent,
@@ -34,6 +36,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
     FooterComponent,
     LaunchpadDetailsComponent,
     LaunchpadDetailsComponent,
+    RocketDetailsComponent,
+    CapsuleDetailsComponent,
   ],
   imports: [
     BrowserModule,
