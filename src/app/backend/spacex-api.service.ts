@@ -66,6 +66,14 @@ export class SpacexApiService {
       );
   }
 
+  getAllLaunches(): Observable<Launch> {
+    const requestEndpoint = this.baseUrl + '/launches/all';
+    return this.restClient.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
 
   getUpcomingLaunches(): Observable<Launch> {
     const requestEndpoint = this.baseUrl + '/launches/upcoming';
@@ -76,7 +84,7 @@ export class SpacexApiService {
   }
 
 
-  getLaunches(options: LaunchOptions): Observable<Launch> {
+  getFilteredLaunches(options: LaunchOptions): Observable<Launch> {
     const params = new URLSearchParams();
     for (const key in options) {
       params.set(key, options[key]);
