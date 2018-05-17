@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDetails.component';
+import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 @NgModule({
   declarations: [
@@ -32,14 +33,15 @@ import { LaunchpadDetailsComponent } from './pages/launchpad/details/launchpadDe
     PageDetailedCoreComponent,
     FooterComponent,
     LaunchpadDetailsComponent,
-    LaunchpadDetailsComponent
+    LaunchpadDetailsComponent,
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    NgHttpLoaderModule
   ],
   providers: [],
   bootstrap: [ AppComponent ],
