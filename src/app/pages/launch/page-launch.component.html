@@ -3,7 +3,7 @@
     <section class="magazine-section my-5">
 
       <!-- Section heading -->
-      <h2 class="h1-responsive font-weight-bold text-center my-5">Details of ours capsules</h2>
+      <h2 class="h1-responsive font-weight-bold text-center my-5">Details of ours launches</h2>
       <!-- Section description -->
       <p class="text-center dark-grey-text w-responsive mx-auto mb-5">You can find here a lot of details of ours capsules.</p>
       <ul class="nav nav-tabs nav-justified">
@@ -32,7 +32,7 @@
 
             <!-- Image -->
             <div class="view overlay rounded-circle littleImg z-depth-1-half mb-4">
-              <img class="img-fluid img-thumbnail rounded-circle" src="{{ launch.links.mission_patch }}" alt="Sample image">
+              <img class="img-fluid img-thumbnail rounded-circle" src="{{ launch.links.mission_patch_small }}" alt="Sample image">
               <a>
                 <div class="mask rgba-white-slight"></div>
               </a>
@@ -40,7 +40,7 @@
 
             <!-- Data -->
             <div class="news-data d-flex justify-content-between">
-              <a href="#!" class="deep-orange-text">
+              <a routerLink="#" class="deep-orange-text">
                 <h6 class="font-weight-bold">
                   <i class="fa fa-rocket pr-2"></i>Launch</h6>
               </a>
@@ -52,7 +52,7 @@
 
             <!-- Excerpt -->
             <h3 class="font-weight-bold dark-grey-text mb-3">
-              <a>{{ launch.mission_name }}</a>
+              <a href="{{ launch.links.video_link }}" target="_blank">{{ launch.mission_name }}</a>
             </h3>
             <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
                {{ launch.details }}
@@ -144,6 +144,17 @@
             </h3>
             <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
               {{ latestLaunches.details }}
+            <p>
+              Launch site :
+              <a routerLink="/launchpad/{{ launch.launch_site.site_id }}" class="badge badge-info" data-toggle="tooltip" title="{{ launch.launch_site.site_name_long }}">
+                {{ launch.launch_site.site_name }}
+              </a>
+            </p>
+            <p>
+              Rocket type :
+              <a routerLink="/rocket/{{ launch.rocket.rocket_id }}" class="badge badge-info">
+                {{ launch.rocket.rocket_name }}
+              </a>
             </p>
 
           </div>
