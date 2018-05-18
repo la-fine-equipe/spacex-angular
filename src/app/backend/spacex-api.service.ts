@@ -110,13 +110,14 @@ export class SpacexApiService {
 
 
   getFilteredLaunches(options: LaunchOptions): Observable<Launch> {
-    const params = new URLSearchParams();
+    const optionParams = new URLSearchParams();
     for (const key in options) {
-      params.set(key, options[key]);
+      optionParams.set(key, options[key]);
     }
 
-    const requestEndpoint = this.baseUrl + '/launches?' + params.toString();
-    return this.restClient.get<Launch>(requestEndpoint)
+    const requestEndpoint = this.baseUrl + '/launches';
+    const queryParams = {params : optionParams};
+    return this.restClient.get<Launch>(requestEndpoint, queryParams)
       .pipe(
         catchError(this.handleError)
       );
