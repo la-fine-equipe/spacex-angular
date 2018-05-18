@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
-    
+
     if (window.location.pathname === "/company") {
-        
+
         // Custom map
         function custom_map() {
 
@@ -164,3 +164,8 @@ jQuery(document).ready(function ($) {
     }
 
 });
+
+// Tooltips Initialization
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
