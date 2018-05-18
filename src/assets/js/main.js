@@ -177,6 +177,10 @@ jQuery(document).ready(function ($) {
         google.maps.event.addDomListener(window, 'load', custom_map);
     }
 
+    if (window.location.pathname === "/launches") {
+
+    }
+
 });
 
 // Tooltips Initialization

@@ -95,9 +95,38 @@
       <!-- Section description -->
       <p class="text-center dark-grey-text w-responsive mx-auto mb-5">You can find here a lot of details of ours launches.</p>
 
+      <!--Grid row-->
+      <div class="row">
+      
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+      
+          <div class="md-form">
+            <!--The "from" Date Picker -->
+            <input placeholder="Selected starting date" type="text" id="startingDate" class="form-control datepicker">
+            <label for="startingDate">Starting Date</label>
+          </div>
+      
+        </div>
+        <!--Grid column-->
+      
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+      
+          <div class="md-form">
+            <!--The "to" Date Picker -->
+            <input placeholder="Selected ending date" type="text" id="endingDate" class="form-control datepicker">
+            <label for="endingDate">Ending Date</label>
+          </div>
+      
+        </div>
+        <!--Grid column-->
+      
+      </div>
+      <!--Grid row-->
+
       <!-- Grid row -->
       <div class="row contentLaunch">
-
         <!-- Grid column -->
         <div class="col-lg-6 col-md-6 pad" *ngFor="let launch of launches | paginate: { itemsPerPage: 8, currentPage: p }">
 
