@@ -10,21 +10,15 @@
 
       <!-- Grid row -->
       <div class="row">
-          <div class="col-md-4 dis" *ngFor="let core of coresDetails;">
+          <div class="col-md-4 dis" *ngFor="let core of coresDetails  | paginate: { itemsPerPage: 3, currentPage: p }">
             <div class="card card-cascade wider" >
                 <div class="view gradient-card-header blue-gradient text-center">
                   <h2 class="card-header-title mb-3">{{ core.core_serial }}</h2>
                   <p class="mb-0" >
                     
-                      Status : {{ core.status }} <br>
-                      <i class="fas fa-calendar-alt"></i> {{ core.original_launch}}<br>
-                      <small>
-                        RTLS Attempt : {{ core.rtls_attempt}}<br>
-                        RTLS Landings : {{ core.rtls_landings}}<br>
-                        ASDS Attempt : {{ core.asds_attempt}}<br>
-                        ASDS Landings: {{ core.asds_landings}}<br>
-                        Water Landing: {{ core.water_landing}}
-                      </small>
+                      Status : <span class="badge badge-pill {{ core.status }}">{{ core.status }}</span> <br>
+                      <i class="fa fa-calendar"></i> {{ core.original_launch}}<br>
+                      
                       
                       
                   </p>
@@ -47,6 +41,9 @@
           </div>
         </div>
         </section>
+        <div class="text-center">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
       </div>
     </main>
     
