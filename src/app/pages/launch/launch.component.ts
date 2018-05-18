@@ -4,10 +4,10 @@ import {Launch} from '../../models/launch';
 
 @Component({
   selector: 'app-page-launch',
-  templateUrl: './page-launch.component.html',
-  styleUrls: ['./page-launch.component.scss']
+  templateUrl: './launch.component.html',
+  styleUrls: ['./launch.component.scss']
 })
-export class PageLaunchComponent implements OnInit {
+export class LaunchComponent implements OnInit {
 
   launches: Launch;
   pastLaunches: Launch;
