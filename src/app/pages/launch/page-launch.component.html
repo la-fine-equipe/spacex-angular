@@ -57,7 +57,18 @@
             <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
                {{ launch.details }}
             </p>
-
+            <p>
+              Launch site :
+              <a routerLink="/launchpad/{{ launch.launch_site.site_id }}" class="badge badge-info" data-toggle="tooltip" title="{{ launch.launch_site.site_name_long }}">
+                {{ launch.launch_site.site_name }}
+              </a>
+            </p>
+            <p>
+              Rocket type :
+              <a routerLink="/rocket/{{ launch.rocket.rocket_id }}" class="badge badge-info">
+                {{ launch.rocket.rocket_name }}
+              </a>
+            </p>
           </div>
         </div>
         <!-- Grid column -->
@@ -100,6 +111,18 @@
             </h3>
             <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
               {{ pastLaunch.details }}
+            </p>
+            <p>
+              Launch site :
+              <a routerLink="/launchpad/{{ pastLaunch.launch_site.site_id }}" class="badge badge-info" data-toggle="tooltip" title="{{ pastLaunch.launch_site.site_name_long }}">
+                {{ pastLaunch.launch_site.site_name }}
+              </a>
+            </p>
+            <p>
+              Rocket type :
+              <a routerLink="/rocket/{{ pastLaunch.rocket.rocket_id }}" class="badge badge-info">
+                {{ pastLaunch.rocket.rocket_name }}
+              </a>
             </p>
 
           </div>
@@ -144,19 +167,19 @@
             </h3>
             <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
               {{ latestLaunches.details }}
+            </p>
             <p>
               Launch site :
-              <a routerLink="/launchpad/{{ launch.launch_site.site_id }}" class="badge badge-info" data-toggle="tooltip" title="{{ launch.launch_site.site_name_long }}">
-                {{ launch.launch_site.site_name }}
+              <a routerLink="/launchpad/{{ latestLaunches.launch_site.site_id }}" class="badge badge-info" data-toggle="tooltip" title="{{ latestLaunches.launch_site.site_name_long }}">
+                {{ latestLaunches.launch_site.site_name }}
               </a>
             </p>
             <p>
               Rocket type :
-              <a routerLink="/rocket/{{ launch.rocket.rocket_id }}" class="badge badge-info">
-                {{ launch.rocket.rocket_name }}
+              <a routerLink="/rocket/{{ latestLaunches.rocket.rocket_id }}" class="badge badge-info">
+                {{ latestLaunches.rocket.rocket_name }}
               </a>
             </p>
-
           </div>
         </div>
         <!-- Grid column -->

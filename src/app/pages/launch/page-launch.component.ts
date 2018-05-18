@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpacexApiService } from '../../backend/spacex-api.service';
+import {Launch} from '../../models/launch';
 
 @Component({
   selector: 'app-page-launch',
@@ -8,10 +9,10 @@ import { SpacexApiService } from '../../backend/spacex-api.service';
 })
 export class PageLaunchComponent implements OnInit {
 
-  launches;
-  pastLaunches;
-  upcomingLaunches;
-  latestLaunches;
+  launches: Launch;
+  pastLaunches: Launch;
+  upcomingLaunches: Launch;
+  latestLaunches: Launch;
 
   constructor(private spacexApi: SpacexApiService) { }
 
