@@ -70,9 +70,9 @@
                 {{ launch.rocket.rocket_name }}
               </a>
             </p>
-            <p>
+            <p *ngIf="launch.telemetry.flight_club != null">
                 Telemetry :
-                <a routerLink="{{ launch.telemetry.flight_club }}" target="_blank" class="badge badge-primary">
+                <a href="{{ launch.telemetry.flight_club }}" target="_blank" class="badge badge-primary">
                  Watch here
                 </a>
               </p>
