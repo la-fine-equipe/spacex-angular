@@ -10,6 +10,8 @@ import { LaunchpadListComponent } from '../pages/launchpad/list/launchpadList.co
 import { LaunchpadDetailsComponent } from '../pages/launchpad/details/launchpadDetails.component';
 import { PageDetailedCapsuleComponent } from '../pages/detailed-capsule/page-detailed-capsule.component';
 import { PageDetailedCoreComponent } from '../pages/detailed-core/page-detailed-core.component';
+import { CapsuleDetailsComponent } from '../pages/capsule/details/capsuleDetails.component';
+import { RocketDetailsComponent } from '../pages/rocket/details/rocketDetails.component';
 
 const appRoutes: Routes = [
   {
@@ -21,8 +23,16 @@ const appRoutes: Routes = [
     component: RocketListComponent
   },
   {
+    path: 'rocket/:id',
+    component: RocketDetailsComponent
+  },
+  {
     path: 'capsule',
     component: CapsuleListComponent
+  },
+  {
+    path: 'capsule/:id',
+    component: CapsuleDetailsComponent
   },
   {
     path: 'launchpad',
