@@ -117,7 +117,7 @@ export class SpacexApiService {
 
     const requestEndpoint = this.baseUrl + '/launches';
     const queryParams = {params : optionParams};
-    return this.restClient.get<Launch>(requestEndpoint, queryParams)
+    return this.restClient.get<Launch>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
