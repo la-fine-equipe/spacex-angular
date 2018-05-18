@@ -1,91 +1,3 @@
-
-<!-- <div class="bodyStyle">
-
-  <section>
-    <ul class="nav nav-tabs nav-justified">
-      <li class="nav-item">
-        <a class="nav-link active show" data-toggle="tab" href="#all" role="tab" aria-selected="true">All Launches</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#past" role="tab" aria-selected="false">Past Launches</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#upcoming" role="tab" aria-selected="false">Upcoming Launches</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#latest" role="tab" aria-selected="false">Latest Launches</a>
-      </li>
-    </ul>
-    <div class="tab-content card">
-      <div class="tab-pane fade in active show" id="all" role="tabpanel">
-        <br>
-
-        <div class="card" *ngFor="let launch of launches">
-          <img class="img-fluid" src="{{ launch.links.mission_patch_small }}" alt="">
-
-          <div class="card-body">
-
-            <h4 class="card-title">{{ launch.mission_name }}</h4>
-
-            <p class="card-text">{{ launch.details }}</p>
-            <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="tab-pane fade" id="past" role="tabpanel">
-        <br>
-
-        <div class="card" *ngFor="let pastLaunch of pastLaunches">
-          <img class="img-fluid" src="{{ pastLaunch.links.mission_patch_small }}" alt="">
-
-          <div class="card-body">
-
-            <h4 class="card-title">{{ pastLaunch.mission_name }}</h4>
-
-            <p class="card-text">{{ pastLaunch.details }}</p>
-            <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="tab-pane fade" id="upcoming" role="tabpanel">
-        <br>
-
-        <div class="card" *ngFor="let upcomingLaunch of upcomingLaunches">
-          <img class="img-fluid" src="{{ upcomingLaunch.links.mission_patch_small }}" alt="">
-
-          <div class="card-body">
-
-            <h4 class="card-title">{{ upcomingLaunch.mission_name }}</h4>
-
-            <p class="card-text">{{ upcomingLaunch.details }}</p>
-            <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="tab-pane fade" id="latest" role="tabpanel">
-        <br>
-
-        <div class="card">
-          <img class="img-fluid" src="{{ latestLaunches.links.mission_patch }}" alt="">
-
-          <div class="card-body">
-
-            <h4 class="card-title">{{ latestLaunches.mission_name }}</h4>
-
-            <p class="card-text">{{ latestLaunches.details }}</p>
-            <a class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-</div> -->
-<!--/.Card-->
 <main>
   <div class="container">
     <section class="magazine-section my-5">
@@ -93,13 +5,28 @@
       <!-- Section heading -->
       <h2 class="h1-responsive font-weight-bold text-center my-5">Details of ours launches</h2>
       <!-- Section description -->
-      <p class="text-center dark-grey-text w-responsive mx-auto mb-5">You can find here a lot of details of ours launches.</p>
+
+      <p class="text-center dark-grey-text w-responsive mx-auto mb-5">You can find here a lot of details of ours capsules.</p>
+      <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item">
+          <a class="nav-link active show" data-toggle="tab" href="#all" role="tab" aria-selected="true">All Launches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#past" role="tab" aria-selected="false">Past Launches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#upcoming" role="tab" aria-selected="false">Upcoming Launches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#latest" role="tab" aria-selected="false">Latest Launches</a>
+        </li>
+      </ul>
 
       <!-- Grid row -->
-      <div class="row contentLaunch">
+      <div id="all" class="row contentLaunch tab-pane fade in active show">
 
         <!-- Grid column -->
-        <div class="col-lg-6 col-md-6 pad" *ngFor="let launch of launches | paginate: { itemsPerPage: 8, currentPage: p }">
+        <div class="col-lg-6 col-md-6 pad" *ngFor="let launch of launches | paginate: { itemsPerPage: 8, currentPage: p, id: 'first' }">
 
           <!-- Featured news -->
           <div class="single-news mb-lg-0 mb-4">
@@ -143,13 +70,160 @@
                 {{ launch.rocket.rocket_name }}
               </a>
             </p>
+          </div>
+        </div>
+        <!-- Grid column -->
+        <div class="text-center">
+          <pagination-controls (pageChange)="p = $event" id="first"></pagination-controls>
+        </div>
+      </div>
+      <!-- Grid row -->
+      <div id="past" class="row contentLaunch tab-pane fade">
+
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-6 pad" *ngFor="let pastLaunch of pastLaunches | paginate: { itemsPerPage: 8, currentPage: k, id: 'second' }">
+
+          <!-- Featured news -->
+          <div class="single-news mb-lg-0 mb-4">
+
+            <!-- Image -->
+            <div class="view overlay rounded-circle littleImg z-depth-1-half mb-4">
+              <img class="img-fluid img-thumbnail rounded-circle" src="{{ pastLaunch.links.mission_patch }}" alt="Sample image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!-- Data -->
+            <div class="news-data d-flex justify-content-between">
+              <a href="#!" class="deep-orange-text">
+                <h6 class="font-weight-bold">
+                  <i class="fa fa-rocket pr-2"></i>Launch</h6>
+              </a>
+              <p class="font-weight-bold dark-grey-text">
+                <i class="fa fa-clock-o pr-2"></i><span class="badge badge-pill green">Launch date : {{ pastLaunch.launch_date_utc }}</span>
+                in <span class="badge badge-pill blue">{{ pastLaunch.launch_year }}</span>
+              </p>
+            </div>
+
+            <!-- Excerpt -->
+            <h3 class="font-weight-bold dark-grey-text mb-3">
+              <a>{{ pastLaunch.mission_name }}</a>
+            </h3>
+            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
+              {{ pastLaunch.details }}
+            </p>
+            <p>
+              Launch site :
+              <a routerLink="/launchpad/{{ pastLaunch.launch_site.site_id }}" class="badge badge-info" data-toggle="tooltip" title="{{ pastLaunch.launch_site.site_name_long }}">
+                {{ pastLaunch.launch_site.site_name }}
+              </a>
+            </p>
+            <p>
+              Rocket type :
+              <a routerLink="/rocket/{{ pastLaunch.rocket.rocket_id }}" class="badge badge-info">
+                {{ pastLaunch.rocket.rocket_name }}
+              </a>
+            </p>
 
           </div>
         </div>
         <!-- Grid column -->
+        <div class="text-center">
+          <pagination-controls id="" (pageChange)="k = $event" id="second"></pagination-controls>
+        </div>
       </div>
-      <div class="text-center">
-        <pagination-controls (pageChange)="$event"></pagination-controls>
+      <!-- Grid row -->
+      <div id="latest" class="row contentLaunch tab-pane fade">
+
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-6 pad">
+
+          <!-- Featured news -->
+          <div class="single-news mb-lg-0 mb-4">
+
+            <!-- Image -->
+            <div class="view overlay rounded-circle littleImg z-depth-1-half mb-4">
+              <img class="img-fluid img-thumbnail rounded-circle" src="{{ latestLaunches.links.mission_patch }}" alt="Sample image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!-- Data -->
+            <div class="news-data d-flex justify-content-between">
+              <a href="#!" class="deep-orange-text">
+                <h6 class="font-weight-bold">
+                  <i class="fa fa-rocket pr-2"></i>Launch</h6>
+              </a>
+              <p class="font-weight-bold dark-grey-text">
+                <i class="fa fa-clock-o pr-2"></i><span class="badge badge-pill green">Launch date : {{ latestLaunches.launch_date_utc }}</span>
+                in <span class="badge badge-pill blue">{{ latestLaunches.launch_year }}</span>
+              </p>
+            </div>
+
+            <!-- Excerpt -->
+            <h3 class="font-weight-bold dark-grey-text mb-3">
+              <a>{{ latestLaunches.mission_name }}</a>
+            </h3>
+            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
+              {{ latestLaunches.details }}
+            </p>
+            <p>
+              Launch site :
+              <a routerLink="/launchpad/{{ latestLaunches.launch_site.site_id }}" class="badge badge-info" data-toggle="tooltip" title="{{ latestLaunches.launch_site.site_name_long }}">
+                {{ latestLaunches.launch_site.site_name }}
+              </a>
+            </p>
+            <p>
+              Rocket type :
+              <a routerLink="/rocket/{{ latestLaunches.rocket.rocket_id }}" class="badge badge-info">
+                {{ latestLaunches.rocket.rocket_name }}
+              </a>
+            </p>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+      <div id="upcoming" class="row contentLaunch tab-pane fade">
+
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-6 pad" *ngFor="let upcomingLaunch of upcomingLaunches">
+
+          <!-- Featured news -->
+          <div class="single-news mb-lg-0 mb-4">
+
+            <!-- Image -->
+            <div class="view overlay rounded-circle littleImg z-depth-1-half mb-4">
+              <img class="img-fluid img-thumbnail rounded-circle" src="../../assets/rocket.png" alt="Sample image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!-- Data -->
+            <div class="news-data d-flex justify-content-between">
+              <a href="#!" class="deep-orange-text">
+                <h6 class="font-weight-bold">
+                  <i class="fa fa-rocket pr-2"></i>Launch</h6>
+              </a>
+              <p class="font-weight-bold dark-grey-text">
+                <i class="fa fa-clock-o pr-2"></i><span class="badge badge-pill green">Launch date : {{ upcomingLaunch.launch_date_utc }}</span>
+                in <span class="badge badge-pill blue">{{ upcomingLaunch.launch_year }}</span>
+              </p>
+            </div>
+
+            <!-- Excerpt -->
+            <h3 class="font-weight-bold dark-grey-text mb-3">
+              <a>{{ upcomingLaunch.mission_name }}</a>
+            </h3>
+            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
+              {{ upcomingLaunch.details }}
+            </p>
+
+          </div>
+        </div>
       </div>
     </section>
   </div>
